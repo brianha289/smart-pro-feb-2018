@@ -1,0 +1,11 @@
+<p *ngFor='let todo of ts.list'>
+  {{todo.title}}
+  <!-- <input type="checkbox" [checked]="todo.isComplete" (change)="doTask(todo)"> -->
+  <!-- <input type="checkbox" [checked]="todo.isComplete"> -->
+  <input type="checkbox" [(ngModel)]="todo.isComplete" (change)="doTask(todo)">
+    <!-- <input type="checkbox" [(ngModel)]="todo.isComplete" (change)="todo.isComlpete(todo)"> -->
+</p>
+
+<h1>Nhập một công việc:</h1>
+<input [(ngModel)]="currentTitle"/>
+<input type="button" value="Thêm" (click)="addTask()"/>
