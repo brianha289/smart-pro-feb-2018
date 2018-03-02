@@ -1,0 +1,22 @@
+<!--The content below is only a placeholder and can be replaced.-->
+
+<!-- Case 1 -->
+<!-- <p *ngFor="let obj of list">{{obj.track}}</p> -->
+
+<!-- Case 2 -->
+<h3>Track album from iTunes API</h3>
+
+<div class="list" *ngFor="let obj of result | async">
+  <div class="sub">
+    
+    <img src="{{obj.thumbnail}}" />
+    
+    <div class="content">
+        <p>Singer: {{obj.artist | uppercase}}</p>
+        <a href="{{obj.link}}"><h4>{{obj.track}}</h4></a>
+        <audio src="{{obj.audioURL}}" controls></audio>
+    </div>
+  </div>
+</div>
+
+
