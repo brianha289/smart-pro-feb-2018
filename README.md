@@ -17,8 +17,8 @@ Content
 Setup
 
 # cd to angular's project, for example:
-```python
-cd todo
+```sh
+|> cd todo
 |> npm install
 |> ng serve -o
 
