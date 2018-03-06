@@ -13,7 +13,7 @@ export class ItuneService {
 
   search(keyword: string): Observable<SearchItem[]> {
     
-    let endpoint = `${this.apiURL}?term=${keyword}&media=music&limit=10`
+    let endpoint = `${this.apiURL}?term=${keyword}&media=music&limit=100`
     
     console.log('Request from API', endpoint);
 

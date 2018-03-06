@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {Todo, TODOS} from '../model/todo';
 // import {TODOS} from '../model/todo';
 import {TaskService} from '../todo/task.service';
+import {FormGroup, FormControl} from '@angular/forms';
+
 @Component({
   selector: 'app-todo',
   templateUrl: './todo.component.html',

@@ -6,17 +6,25 @@
 <!-- Case 2 -->
 <h3>Track album from iTunes API</h3>
 
-<div class="list" *ngFor="let obj of result | async">
+<!-- Input search -->
+<label>Filter:&nbsp;&nbsp;</label>
+<input [(ngModel)]="filterName" />
+<div [formGroup]="searchForm">
+  <label>Search:</label>
+  <input formControlName="search" />
+</div>
+<p *ngIf="isLoading">Loading...</p>
+<div class="list" *ngFor="let obj of result | async | filter: filterName">
   <div class="sub">
-    
+
     <img src="{{obj.thumbnail}}" />
-    
-    <div class="content">
-        <p>Singer: {{obj.artist | uppercase}}</p>
-        <a href="{{obj.link}}"><h4>{{obj.track}}</h4></a>
-        <audio src="{{obj.audioURL}}" controls></audio>
+
+    <div class="content" appHighlight color='#F26419'>
+      <p>Singer: {{obj.artist | uppercase}}</p>
+      <a href="{{obj.link}}">
+        <h4>{{obj.track}}</h4>
+      </a>
+      <audio src="{{obj.audioURL}}" controls></audio>
     </div>
   </div>
 </div>
-
-
