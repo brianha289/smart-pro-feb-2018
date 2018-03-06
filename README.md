@@ -12,3 +12,15 @@ Content
 # angular
 ## ionic framework
 ```
+
+```markdown
+Setup
+
+# cd to angular's project, for example:
+```sh
+|> cd todo
+|> npm install
+|> ng serve -o
+
+```
+```
