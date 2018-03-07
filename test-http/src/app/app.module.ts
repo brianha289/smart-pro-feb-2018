@@ -10,6 +10,7 @@ import { HelloComponent } from './hello/hello.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FilterPipe } from './filter.pipe';
 import { HighlightDirective } from './highlight.directive';
+import { AppRoutingModule } from './/app-routing.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +22,8 @@ import { HighlightDirective } from './highlight.directive';
     BrowserModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AppRoutingModule
     ],
   providers: [ItuneService],
   bootstrap: [AppComponent]

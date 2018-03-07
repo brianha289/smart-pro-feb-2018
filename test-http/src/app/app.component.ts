@@ -1,13 +1,14 @@
 import { Component } from '@angular/core';
-import {ItuneService, SearchItem} from './itune.service';
+import { ItuneService, SearchItem } from './itune.service';
 import { Observable } from 'rxjs/Observable';
-import {FormGroup, FormControl} from '@angular/forms';
+import { FormGroup, FormControl } from '@angular/forms';
 
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/debounceTime';
 import 'rxjs/add/operator/distinctUntilChanged';
 import 'rxjs/add/operator/switchMap';
 import 'rxjs/add/operator/do';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -24,7 +25,7 @@ export class AppComponent {
   list: SearchItem[];
   result: Observable<SearchItem[]>
 
-  constructor(public is: ItuneService) {
+  constructor(public is: ItuneService, public router: Router) {
     // this.is.search('Hello').subscribe(next => {
     //   // console.log(next);
     //   this.list = next;
@@ -39,21 +40,21 @@ export class AppComponent {
     //   console.log(next)
     //   this.result = this.is.search(next)
     // })
-    
+
 
     this.result = control.valueChanges
-    .debounceTime(400).distinctUntilChanged()
-    .do(_ => {
-      console.log('Begin')
-      this.isLoading = true
-    })
-    .switchMap((term: string) => 
-       this.is.search(term)
-    )
-    .do(_ => {
-      console.log('End')
-      this.isLoading = false
-    })
+      .debounceTime(400).distinctUntilChanged()
+      .do(_ => {
+        console.log('Begin')
+        this.isLoading = true
+      })
+      .switchMap((term: string) =>
+        this.is.search(term)
+      )
+      .do(_ => {
+        console.log('End')
+        this.isLoading = false
+      })
 
     // this.result = this.is.search('You');
   }

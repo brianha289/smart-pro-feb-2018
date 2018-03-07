@@ -4,27 +4,34 @@
 <!-- <p *ngFor="let obj of list">{{obj.track}}</p> -->
 
 <!-- Case 2 -->
-<h3>Track album from iTunes API</h3>
+<div *ngIf="router.url == '/'">
 
-<!-- Input search -->
-<label>Filter:&nbsp;&nbsp;</label>
-<input [(ngModel)]="filterName" />
-<div [formGroup]="searchForm">
-  <label>Search:</label>
-  <input formControlName="search" />
-</div>
-<p *ngIf="isLoading">Loading...</p>
-<div class="list" *ngFor="let obj of result | async | filter: filterName">
-  <div class="sub">
+  <h3>Track album from iTunes API</h3>
 
-    <img src="{{obj.thumbnail}}" />
+  <!-- Input search -->
+  <label>Filter:&nbsp;&nbsp;</label>
+  <input [(ngModel)]="filterName" />
+  <div [formGroup]="searchForm">
+    <label>Search:</label>
+    <input formControlName="search" />
+  </div>
+  <p *ngIf="isLoading">Loading...</p>
+  <div class="list" *ngFor="let obj of result | async | filter: filterName">
+    <div class="sub" routerLink="/details">
 
-    <div class="content" appHighlight color='#F26419'>
-      <p>Singer: {{obj.artist | uppercase}}</p>
-      <a href="{{obj.link}}">
+      <img src="{{obj.thumbnail}}" />
+
+      <div class="content">
+        <!-- appHighlight color='#F26419' -->
+        <p>Singer: {{obj.artist | uppercase}}</p>
+        <!-- <a href="{{obj.link}}"> -->
         <h4>{{obj.track}}</h4>
-      </a>
-      <audio src="{{obj.audioURL}}" controls></audio>
+        <!-- </a> -->
+        <audio src="{{obj.audioURL}}" controls></audio>
+      </div>
     </div>
   </div>
+
 </div>
+
+<router-outlet></router-outlet>

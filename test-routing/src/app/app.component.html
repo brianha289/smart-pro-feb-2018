@@ -1,0 +1,13 @@
+<div *ngIf="router.url == '/'">
+  <div [ngSwitch]="authService.isLogin | async">
+    <button *ngSwitchCase="false" (click)="doLogin()">Let's Login</button>
+    <button *ngSwitchCase="true" (click)="doLogout()">Logout</button>
+  </div>
+  <nav>
+    <button routerLink="/details">Go to Details</button>
+  </nav>
+
+</div>
+
+
+<router-outlet></router-outlet>
