@@ -7,8 +7,8 @@
 
 </ion-header>
 <!-- class="contentColor" -->
-<ion-content>
-  <ion-slides no-border class="slider" autoplay="5000" loopedslide="true" speed="500" pager="true">
+<ion-content class="home">
+  <ion-slides no-border class="slider" autoplay="5000" loop="true" speed="500" pager="true" margin-bottom>
     <ion-slide class="sliderImg">
       <ion-img src="../../../assets/imgs/slide1.jpeg"></ion-img>
     </ion-slide>
@@ -19,7 +19,7 @@
       <ion-img src="../../../assets/imgs/slide1.jpeg"></ion-img>
     </ion-slide>
   </ion-slides>
-<!-- Categories  -->
+  <!-- Categories  -->
   <ion-scroll scrollX="true" class="categories">
     <button margin-left class="backgroundClearColor">
       <div class="categoryCircleButton"></div>
@@ -55,4 +55,24 @@
       </div>
     </button>
   </ion-scroll>
+  <!-- Tìm kiếm phổ biến -->
+  <p style="background:white; margin-left: 10px;">Tìm kiếm phổ biến</p>
+  <ion-grid fixed>
+    <ion-row wrap>
+      <ion-col style="border-bottom: medium gray(34);">
+        Giày Nữ
+      </ion-col>
+      <ion-col style="border-bottom: medium gray(34);">
+        Ghảo Elmich
+      </ion-col>
+    </ion-row>
+    <ion-row wrap>
+      <ion-col>
+        Bàn phím Dell
+      </ion-col>
+      <ion-col>
+        Set đồ bộ
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
