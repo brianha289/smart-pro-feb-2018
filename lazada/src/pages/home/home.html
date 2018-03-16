@@ -1,20 +1,58 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Home</ion-title>
+    <!-- <ion-title>Trang chủ </ion-title> -->
+    <ion-searchbar [(ngModel)]="valueSearch" [showCancelButton]="shouldShowCancel" (ionInput)="onInput($event)" (ionCancel)="onCancel($event)">
+      ></ion-searchbar>
   </ion-navbar>
+
 </ion-header>
-
-<ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
-  <p>Xin Chao 2</p>
-
-  <button (click)="setRootTab()">Root</button>
+<!-- class="contentColor" -->
+<ion-content>
+  <ion-slides no-border class="slider" autoplay="5000" loopedslide="true" speed="500" pager="true">
+    <ion-slide class="sliderImg">
+      <ion-img src="../../../assets/imgs/slide1.jpeg"></ion-img>
+    </ion-slide>
+    <ion-slide class="sliderImg">
+      <ion-img src="../../../assets/imgs/slide2.jpg"></ion-img>
+    </ion-slide>
+    <ion-slide class="sliderImg">
+      <ion-img src="../../../assets/imgs/slide1.jpeg"></ion-img>
+    </ion-slide>
+  </ion-slides>
+<!-- Categories  -->
+  <ion-scroll scrollX="true" class="categories">
+    <button margin-left class="backgroundClearColor">
+      <div class="categoryCircleButton"></div>
+      <div class="categoryHeader">
+        Gian Hàng
+        <br/> Chính Hãng
+      </div>
+    </button>
+    <button class="backgroundClearColor">
+      <div class="categoryCircleButton"></div>
+      <div class="categoryHeader">
+        Dịch vụ
+        <br/> & Nạp Thẻ
+      </div>
+    </button>
+    <button class="backgroundClearColor">
+      <div class="categoryCircleButton"></div>
+      <div class="categoryHeader">
+        Mã
+        <br/> Giảm Giá
+      </div>
+    </button>
+    <button class="backgroundClearColor">
+      <div class="categoryCircleButton"></div>
+      <div class="categoryHeader">
+        Khuyến Mãi
+      </div>
+    </button>
+    <button margin-right class="backgroundClearColor">
+      <div class="categoryCircleButton"></div>
+      <div class="categoryHeader">
+        Danh Mục
+      </div>
+    </button>
+  </ion-scroll>
 </ion-content>

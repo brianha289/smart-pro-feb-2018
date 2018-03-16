@@ -7,6 +7,8 @@ import { TabsPage } from '../tabs/tabs';
   templateUrl: 'home.html'
 })
 export class HomePage {
+  shouldShowCancel: boolean = true
+  valueSearch: string = null
 
   constructor(public navCtrl: NavController) {
     
@@ -14,5 +16,11 @@ export class HomePage {
   setRootTab(){
     this.navCtrl.setRoot(TabsPage)
   }
+  onInput(event) {
+    console.log(event)
+    console.log("Search keyword:" , this.valueSearch)
+  }
+  onCancel(event) {
 
+  }
 }
