@@ -18,7 +18,8 @@ import { AuthGuardService } from './auth-guard.service';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    Geolocation
   ],
   providers: [AuthService, AuthGuardService],
   bootstrap: [AppComponent]
