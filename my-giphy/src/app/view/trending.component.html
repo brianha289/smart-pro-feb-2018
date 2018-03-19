@@ -1,0 +1,8 @@
+<div class="card-columns container">
+  <div class="card" *ngFor="let gif of gifs">
+    <app-gif-viewr [imgUrl]="gif.images.original.url">
+    </app-gif-viewr>
+  </div>
+  
+</div>
+<input type="button" value="Load More" class="btn btn-primary btn-block" *ngIf="!isLoading" (click)="getMore()">

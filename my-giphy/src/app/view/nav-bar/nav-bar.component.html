@@ -1,0 +1,13 @@
+<mat-toolbar color="primary" class="fixed-header">
+  <mat-toolbar-row>
+    <mat-icon style="margin-right: 5px">home</mat-icon>
+    <span routerLink="/">Giphy App</span>
+    <button mat-button class="item-header-margin" routerLink="/trending">Trending</button>
+    <button mat-button class="item-header-margin" routerLink="/search">Search</button>
+    <span class="login-spacer"></span>
+    <div [ngSwitch]="authService.isLogin | async">
+      <button *ngSwitchCase="false" mat-button class="login-margin" (click)="doLogin()">Login</button>
+      <button *ngSwitchCase="true" mat-button class="login-margin" (click)="doLogout()">Logout</button>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>

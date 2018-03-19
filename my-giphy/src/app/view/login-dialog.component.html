@@ -1,0 +1,15 @@
+<form class="login-form">
+  <p>Please enter login info:</p>
+  <div>
+    <mat-form-field class="login-full-width">
+      <input matInput [(ngModel)]="data.email" [formControl]="emailCtrl" placeholder="Email">
+    </mat-form-field>
+    <mat-form-field class="login-full-width">
+      <input matInput [(ngModel)]="data.password" [formControl]="passwordCtrl" placeholder="Password" type="password">
+    </mat-form-field>
+  </div>
+  <div mat-dialog-actions class="login-full-width login-actions">
+    <button mat-button (click)="onNoClick()">Cancel</button>
+    <button mat-button cdkFocusInitial color="primary" (click)="isFlag && doLogin()" [disabled]="!isFlag">Login</button>
+  </div>
+</form>

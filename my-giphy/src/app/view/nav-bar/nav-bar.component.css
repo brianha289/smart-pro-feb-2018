@@ -1,0 +1,19 @@
+.fixed-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%  !important;
+}
+
+.login-margin {
+  margin: 0px;
+}
+
+.item-header-margin {
+  margin-left: 16px;
+}
+
+.login-spacer {
+  flex: 1 1 auto;
+}

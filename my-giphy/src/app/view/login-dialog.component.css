@@ -1,0 +1,17 @@
+
+.login-actions {
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.login-form {
+  min-width: 250px;
+  max-width: 500px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.login-full-width {
+  width: 100%;
+}
