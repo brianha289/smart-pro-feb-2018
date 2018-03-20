@@ -3,7 +3,7 @@
     <name>lazada</name>
     <description>An awesome Ionic/Cordova app.</description>
     <author email="hi@ionicframework" href="http://ionicframework.com/">Ionic Framework Team</author>
-    <content src="index.html" />
+    <content original-src="index.html" src="http://192.168.88.102:8100" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
@@ -89,5 +89,5 @@
         <variable name="GEOLOCATION_USAGE_DESCRIPTION" value="Allow lazada use your location" />
     </plugin>
     <engine name="ios" spec="^4.5.4" />
-    <engine name="android" spec="~7.0.0" />
+    <engine name="android" spec="^7.0.0" />
 </widget>
