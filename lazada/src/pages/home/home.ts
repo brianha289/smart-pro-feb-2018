@@ -19,7 +19,7 @@ import {
 export class HomePage implements OnInit {
 
   @ViewChild('mapCanvas') mapCanvas: ElementRef
-  map: GoogleMap
+  map: GoogleMap = null
 
 
   shouldShowCancel: boolean = true
@@ -50,7 +50,7 @@ export class HomePage implements OnInit {
   }
 
   ionViewDidLoad() {
-    // this.loadMap()
+    this.loadMap()
   }
 
   loadMap() {
@@ -64,8 +64,8 @@ export class HomePage implements OnInit {
         tilt: 30
       }
     };
-    
-    this.map = GoogleMaps.create('mapCanvas', option) //(this.mapCanvas.nativeElement, option);
+
+    this.map = GoogleMaps.create(this.mapCanvas.nativeElement, option);
 
     this.map.one(GoogleMapsEvent.MAP_READY)
       .then(() => {
@@ -73,12 +73,12 @@ export class HomePage implements OnInit {
 
         // Now you can use all methods safely.
         this.map.addMarker({
-          title: 'Ionic',
-          icon: 'blue',
+          title: 'Lazada',
+          icon: 'red',
           animation: 'DROP',
           position: {
-             lat: 10.8112,
-          lng: 106.633
+            lat: 10.8,
+            lng: 106.6
           }
         })
           .then(marker => {
