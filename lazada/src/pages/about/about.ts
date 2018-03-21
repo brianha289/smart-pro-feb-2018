@@ -46,8 +46,8 @@ export class AboutPage {
       tilt: 30
     });
 
-    // this.directionsDisplay.setMap(this.map);
-    // this.calculateAndDisplayRoute()
+    this.directionsDisplay.setMap(this.map);
+    this.calculateAndDisplayRoute()
   }
 
   calculateAndDisplayRoute() {
