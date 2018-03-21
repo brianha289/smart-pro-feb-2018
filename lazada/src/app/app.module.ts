@@ -13,7 +13,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { IntroducePageModule } from '../pages/introduce/introduce.module';
 import { IonicStorageModule } from '@ionic/storage';
 import { Geolocation } from '@ionic-native/geolocation';
-
+import { GoogleMaps } from '@ionic-native/google-maps';
 @NgModule({
   declarations: [
     MyApp,
@@ -27,7 +27,7 @@ import { Geolocation } from '@ionic-native/geolocation';
     IonicModule.forRoot(MyApp),
     IntroducePageModule,
     IonicStorageModule.forRoot()
-    ],
+  ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
@@ -40,7 +40,8 @@ import { Geolocation } from '@ionic-native/geolocation';
     StatusBar,
     SplashScreen,
     Geolocation,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    GoogleMaps,
+    { provide: ErrorHandler, useClass: IonicErrorHandler }
   ]
 })
-export class AppModule {}
+export class AppModule { }
