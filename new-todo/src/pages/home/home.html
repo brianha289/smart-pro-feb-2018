@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title text-center>
+      My Todo app
+    </ion-title>
+    <ion-buttons end>
+      <button (click)="showDetail()" margin-right>
+        <ion-icon name="add"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding *mobxAutorun>
+  <ion-item-group>
+    <ion-item-divider color="light">
+      All items are completed
+    </ion-item-divider>
+    <ion-item *ngIf="ts.listCompleted.length == 0">
+      <p>There is no items</p>
+    </ion-item>
+
+    <ion-item *ngFor="let todo of ts.listCompleted">
+      <p>{{todo.title}}</p>
+    </ion-item>
+  </ion-item-group>
+
+  <ion-item-group>
+    <ion-item-divider color="dark">
+      All items
+    </ion-item-divider>
+  </ion-item-group>
+
+  <ion-item *ngIf="ts.list.length == 0">
+      <p>There is no items</p>
+    </ion-item>
+
+    <ion-item *ngFor="let todo of ts.list">
+      <p  (click)="showDetail(todo)">{{todo.title}}</p>
+    </ion-item>
+</ion-content>

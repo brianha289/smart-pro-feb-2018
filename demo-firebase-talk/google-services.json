@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "439911062467",
+    "firebase_url": "https://fir-firebase-talk.firebaseio.com",
+    "project_id": "fir-firebase-talk",
+    "storage_bucket": "fir-firebase-talk.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:439911062467:android:3adb4b9d835eafe6",
+        "android_client_info": {
+          "package_name": "run.hockey.demofirebase.talk"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "439911062467-8oggk0lumoqullon53kbkdvtcdo8nnv7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDoVJ5yUDVRlW4PWz4_ATgRqkduoLkNUtg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
