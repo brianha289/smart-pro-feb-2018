@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Chat
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-item *ngFor="let chat of chats">
+    <div [ngClass]="chat.msgClass">
+      {{chat.info}}
+    </div>
+  </ion-item>
+
+  <ion-footer>
+    <ion-input placeholder="Enter your message" [(ngModel)]="inputMessage" >
+    </ion-input>
+    <ion-buttons end>
+      <button ion-button (click)="send()">Send</button>
+    </ion-buttons>
+  </ion-footer>
+</ion-content>
