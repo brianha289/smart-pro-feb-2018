@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title text-center>
+      Todo Project
+    </ion-title>
+
+    <ion-buttons end>
+      <button (click)="doAdd()">
+        <ion-icon name="add"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-item *ngFor="let todo of todos">
+    <div>{{todo.title}}</div>
+  </ion-item>
+  <div *ngIf="todos.length == 0">
+    There is no items
+  </div>
+</ion-content>

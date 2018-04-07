@@ -1,0 +1,26 @@
+<ion-split-pane>
+
+  <ion-menu [content]="content">
+
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>Setting</ion-title>
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-content class="outer-content">
+      <ion-list radio-group [(ngModel)]="selectedType" (ionChange)="doUpdateType($event)">
+        <ion-list-header>Map Types</ion-list-header>
+        <ion-item *ngFor="let t of mapProvider.types">
+          <ion-radio></ion-radio>
+          <ion-label>{{t.name}}</ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-content>
+
+  </ion-menu>
+
+  <!-- main navigation -->
+  <ion-nav [root]="rootPage" #content swipeBackEnabled="false" main></ion-nav>
+
+</ion-split-pane>
